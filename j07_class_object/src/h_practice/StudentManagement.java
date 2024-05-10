@@ -19,11 +19,10 @@ public class StudentManagement {
 		*/
 		
 		Scanner sc = new Scanner(System.in);
-		
+		Scanner scLine = new Scanner(System.in);
 		// 학생 정보를 저장할 배열
 		Student[] students = null;
-		
-		
+	
 		while(true){
 			System.out.println("=====================================");
 			System.out.println("1.학생수|2.정보 입력|3.정보확인|4.분석|5.종료");
@@ -50,12 +49,16 @@ public class StudentManagement {
                     students = new Student[studentCount];
 					break;
 				case 2 :
+                    if (students == null) {
+                        System.out.println("학생 정보가 없습니다.");
+                        continue;
+                    }
                     for (int i = 0; i < students.length; i++) {
                         System.out.println("학생 " + (i + 1) + "의 정보를 입력하세요:");
                         System.out.print("학번: ");
                         int number = sc.nextInt();
                         System.out.print("이름: ");
-                        String name = sc.next();
+                        String name = scLine.next();
                         System.out.print("점수: ");
                         int score = sc.nextInt();
 
@@ -64,12 +67,51 @@ public class StudentManagement {
                     }
                     break;
 				case 3 :
+                    if (students == null) {
+                        System.out.println("학생 정보가 없습니다.");
+                        continue;
+                    }
 					for(Student k : students) {
 						 System.out.println(k.getInfo());
 					}
+					break;
 				case 4:
-					
-					
+                    if (students == null) {
+                        System.out.println("학생 정보가 없습니다.");
+                        continue;
+                    }
+                    int sum = 0;
+                    int maxScore = Integer.MIN_VALUE;
+                    int minScore = Integer.MAX_VALUE;
+                    String maxScoreName = null;
+                    String minScoreName = null;
+                    for(Student k : students) {
+                    	int Score = k.score;
+                    	 sum += Score;
+                    	 if(Score > maxScore) {
+                    		 maxScore = Score;
+                    		 maxScoreName = k.name;
+                    	 }
+                    	 if(Score < minScore) {
+                    		 minScore = Score;
+                    		 minScoreName = k.name;
+                    	 }
+                    		 
+                    } // for문 end
+                    
+                    double avg = (double)(sum / students.length);
+                    
+                    System.out.print("최고 득점자 : " +maxScoreName+ ",");
+                    System.out.print(" 최저 득점자 : " +minScoreName+ ",");
+                    System.out.print(" 평군 : " +avg+ ",");
+                    System.out.println();
+                    break;
+                    default :
+                    	break;
+			} // switch end
+			if(selctNo == 5) {
+				System.out.println("포르그램 종료");
+				break;
 			}
 		}
 	}
