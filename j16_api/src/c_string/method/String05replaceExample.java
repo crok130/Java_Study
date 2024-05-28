@@ -1,4 +1,4 @@
-package c_string_method;
+package c_string.method;
 
 public class String05replaceExample {
 
