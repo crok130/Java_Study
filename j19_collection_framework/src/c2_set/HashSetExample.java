@@ -37,7 +37,7 @@ public class HashSetExample {
 		while(iterator.hasNext()) {
 			// set 내부를 순회하면서 데이터를 조작 할때 사용
 			String s = iterator.next();
-			System.out.print(s+"");
+			System.out.print(s+" ");
 		}
 		
 		System.out.println();
