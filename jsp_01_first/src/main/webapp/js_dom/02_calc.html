@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>js_dom/02_calc.html</title>
+</head>
+<body>
+	<input type="number" id="first" autofocus tabindex="1"/> + 
+	<input type="number" id="second" tabindex="2"/> =
+	<input type="text" id="result" readonly /> <br/>
+	<input type="button" value="결과확인" tabindex="3"/>
+	
+	<script>
+	
+		
+
+    	let button = document.querySelector("input[type='button']");
+    	
+    	button.onclick = function() {
+            let firstValue = document.getElementById("first").value;
+            let secondValue = document.getElementById("second").value;
+            let sum = Number(firstValue) + Number(secondValue);
+
+            document.getElementById("result").value = sum;
+			
+		};
+    	
+		let a = prompt("숫자입력");
+    	console.log(a);
+		let bool = confirm("쉬시겠습니까?");
+		console.log(bool);
+		
+					
+
+		
+		/*
+			button이 클릭되었을 때
+			first tag요소의 value 값과
+			second tag요소의 value 값을 더한 결과를 
+			result 태그요소의 value에 출력
+		*/
+	
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
