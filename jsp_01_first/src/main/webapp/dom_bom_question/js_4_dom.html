@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>고급 문제</title>
+    <style>
+        #imageGallery {
+            border: 1px solid red;
+            min-height: 40px;
+            padding: 10px;
+        }
+        
+        #imageGallery img {
+            width: 100px;
+            height: 200px;
+            margin: 5px;
+            object-fit: cover;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="imageInput" placeholder="이미지 URL을 입력하세요">
+    <button id="addImageButton">이미지 추가</button> 
+    <br/><br/>
+    <div id="imageGallery"></div>
+
+    <script>
+ 
+        const addImageButton = document.getElementById('addImageButton');
+        const imageGallery = document.getElementById('imageGallery');
+        
+        // 이미지 추가 버튼에 클릭 이벤트를 추가합니다.
+        addImageButton.addEventListener('click', function() {
+            // 입력된 이미지 URL을 가져옵니다.
+            const imageUrl = document.getElementById('imageInput').value.trim();
+            
+            // 입력된 URL이 비어있지 않은 경우에만 이미지를 추가합니다.
+            if (imageUrl !== '') {
+                // 새 이미지 요소를 생성합니다.
+                const imgElement = document.createElement('img');
+                imgElement.src = imageUrl;
+                imgElement.alt = 'Added Image';
+                
+
+                
+                // 이미지를 갤러리에 추가합니다.
+                imageGallery.appendChild(imgElement);
+                
+                // 이미지를 클릭하면 삭제되도록 이벤트 리스너를 추가합니다.
+                imgElement.addEventListener('click', function() {
+                    imageGallery.removeChild(imgElement);
+                });
+                
+                // 입력 필드를 초기화합니다.
+                document.getElementById('imageInput').value = '';
+            }
+        });
+    </script>
+</body>
+</html>
