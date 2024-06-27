@@ -6,20 +6,36 @@
 </head>
 <body>
     <p>Counter: <span id="counter">0</span></p>
-    <button id="increaseButton" onclick="increase()">Increase</button>
-    <button id="decreaseButton" onclick="decrease()">Decrease</button>
+    <button id="increaseButton">Increase</button>
+    <button id="decreaseButton">Decrease</button>
 
     <script>
-		let counter = 0;
-        function increase() {
-            counter++;
-            document.getElementById("counter").innerText = counter;
-        }
-
-        function decrease() {
-            counter--;
-            document.getElementById("counter").innerText = counter;
-        }
+       // 여기에 JavaScript 코드를 작성
+       // span 태그 내부에 출력될 counter 숫자를 저장할 변수
+       let count = 0;
+       
+       let counter = document.getElementById("counter");
+       
+       document.getElementById("increaseButton").onclick = function() {
+		count++;
+		counter.innerText = count;
+	}
+       
+       document.getElementById("decreaseButton").onclick = function() {
+   		count--;
+   		counter.innerText = count;
+   	}
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
