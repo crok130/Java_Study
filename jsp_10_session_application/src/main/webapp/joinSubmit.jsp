@@ -50,6 +50,7 @@
 	}
 	
 	request.setAttribute("msg",msg);
+	
 	request.getRequestDispatcher(nextPage).forward(request,response);
 	
 	System.out.println(memberList);
