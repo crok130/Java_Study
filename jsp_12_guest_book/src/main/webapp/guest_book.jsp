@@ -103,7 +103,7 @@
 				String guestName = rs.getString("guestName");
 				String message = rs.getString("message");
 		%>
-			<tr style="width:100%;margin-bottom:5px;">
+			<tr style="width:100%;">
 				<td>
 					메세지 번호 : <%=num%> <br/>
 					손님 이름 : <%=guestName %> <br/>
@@ -201,6 +201,7 @@
 				<%if(endPage < maxPage){ %>
 				<a href="guest_book.jsp?page=<%=endPage + 1%>">[다음]</a>
 				<%}%>
+				
 				<%if(currentPage < maxPage){ %>
 				<!-- 마지막 페이지 이동 -->
 				<a href="guest_book.jsp?page=<%=maxPage%>">[마지막]</a>
