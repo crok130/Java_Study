@@ -1,14 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" %>
-<!-- common/main.jsp -->
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<h1>MAIN PAGE</h1>
-	<!-- request 영역 객체에 속성 값을 읽어와 출력 -->
-	<h3>${requestScope.test}</h3>
-</body>
-</html>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+	<jsp:include page="header.jsp"/>
+	<section>
+		<h1 class="main">test - ${requestScope.test}</h1>
+		<h1>context - ${pageContext.request.contextPath}</h1>
+		<h1>path - ${path}</h1>
+	</section>
+	<jsp:include page="footer.jsp"/>
