@@ -9,7 +9,17 @@ public interface FactoryUtil {
 	 * @return - 전체 요청 정보에서 특정 요청에 대한 구분 문자열만 반환
 	 */
 	public static String getCommand(HttpServletRequest request) {
-		return request.getRequestURI().substring(request.getContextPath().length() +1);
+		return request.getRequestURI().substring(request.getContextPath().length() + 1);
 	}
 	
 }
+
+
+
+
+
+
+
+
+
+

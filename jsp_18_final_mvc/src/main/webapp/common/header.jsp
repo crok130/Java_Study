@@ -32,10 +32,10 @@
 			<c:choose>
 				<c:when test="${!empty sessionScope.member}">
 					<li>
-						<a href="info.mc">${member.name}</a>님 환영합니다
+						<a href="info.mc">${member.name}</a>님 방가 //(- -)
 					</li>
 					<li>
-						<a href="LogOut.mc">로그아웃</a>
+						<a href="logOut.mc">로그아웃</a>
 					</li>
 				</c:when>
 				<c:otherwise>
@@ -44,14 +44,26 @@
 				</c:otherwise>
 			</c:choose>
 		</ul>
-	</div>
+	</div> 
 	<div style="overflow:visible">
 		<ul>
-			<li><a href="">공지사항</a></li>
-			<li><a href="">질문과답변</a></li>
+			<!-- board/notice/notice_list.jsp 페이지 로 이동 -->
+			<li><a href="notice.do">공지사항</a></li>
+			<li><a href="boardList.qna">질문과답변</a></li>
+			<li><a href="boardListPage.qna">paging 질문과답변</a></li>
 		</ul>
 	</div>
 </header>
+
+
+
+
+
+
+
+
+
+
 
 
 

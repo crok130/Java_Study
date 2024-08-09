@@ -22,9 +22,9 @@ public class TestServlet extends HttpServlet {
 		// /jsp_18_final_mvc
 		String contextPath = request.getContextPath();
 		System.out.println("요청 프로젝트 경로 : " + contextPath);
-	
+		
 		String command = requestPath.substring(contextPath.length() + 1);
-		System.out.println("요청 URL : " +command);
+		System.out.println("요청 URL : " + command);
 		
 		if(command.equals("test")) {
 			request.setAttribute("test", "Test Param");

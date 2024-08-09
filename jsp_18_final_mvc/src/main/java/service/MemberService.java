@@ -6,6 +6,7 @@ import jakarta.servlet.http.HttpServletResponse;
  * 데이터 처리에 필요한 알맞은 정보를 가공하는 과정을 처리할 class
  * == 비지니스 로직을 수행한다.
  * Service
+ * @since 2024-07-30
  */
 public interface MemberService {
 	
@@ -25,13 +26,13 @@ public interface MemberService {
 	boolean memberLogin(HttpServletRequest request, HttpServletResponse response);
 	
 	/**
-	 * @param request - 회원 정보 수정 처리에 필요한 파라미터 정보
-	 * @param response - 요청 처리에 결과에 따른 응답
+	 * @param request - 회원 정보 수정 처리에 필요한 파라미터 정보 
+	 * @param response - 요청 처리 결과에 따른 응답
 	 */
 	void memberUpdate(HttpServletRequest request, HttpServletResponse response);
 	
 	/**
-	 * @param request - 회원 탈퇴 시용자가 입력한 비밀번호 일치여부 판단
+	 * @param request - 회원 탈퇴 시 사용자가 입력한 비밀번호 일치여부 판단
 	 * @param response - 회원탈퇴 요청 처리에 따른 응답.
 	 */
 	void withdraw(HttpServletRequest request, HttpServletResponse response);
@@ -41,7 +42,20 @@ public interface MemberService {
 	 * @param response - 쿠키 정보 삭제를 위한 정보
 	 */
 	void logOut(HttpServletRequest request, HttpServletResponse response);
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

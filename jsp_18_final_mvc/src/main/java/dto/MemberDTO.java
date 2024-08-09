@@ -18,13 +18,13 @@ public class MemberDTO {
 	private Date updatedate;	// 회원 정보 수정 시간
 	
 	public MemberDTO() {}
-	
+
 	// 로그인에 필요한 정보를 저장하는 생성자
 	public MemberDTO(String id, String pass) {
 		this.id = id;
 		this.pass = pass;
 	}
-	
+
 	// 회원가입에 필요한 정보를 저장하는 생성자
 	public MemberDTO(String id, String pass, String name, int age, String gender) {
 		this.id = id;
